@@ -32,6 +32,9 @@ var signup_name_id, signup_nid_id, signup_dob_id, signup_mobile_id, signup_blood
   touch_with_infected_name_id, touch_with_infected_mobile_id, met_person_name_id, met_person_mobile_id, health_worker_yes_id, health_worker_no_id, volunteer_org_name_id, security_person_org_name_id, getting_salary_id;
 var isHealthWorker;
 
+var wage_grade_id, food_supply_id, losing_job_id, producing_farm_id,
+  amount_of_production_id, get_help_farm_id, supply_farm_intime_id, fair_price_farm_id;
+
 function getAllValues() {
   //Signup data
   signup_name_id = getValue("signup_name_id");
@@ -101,7 +104,17 @@ function getAllValues() {
   volunteer_org_name_id = getValue("volunteer_org_name_id");
   security_person_org_name_id = getValue("security_person_org_name_id");
 
+  //Income info
   getting_salary_id = getValueFromSelect("getting_salary_id");
+  wage_grade_id = getValueFromSelect("wage_grade_id");
+  food_supply_id = getValueFromSelect("food_supply_id");
+  losing_job_id = getValueFromSelect("losing_job_id");
+  producing_farm_id = getValueFromSelect("producing_farm_id");
+  amount_of_production_id = getValue("amount_of_production_id");
+  get_help_farm_id = getValueFromSelect("get_help_farm_id");
+  supply_farm_intime_id = getValueFromSelect("supply_farm_intime_id");
+  fair_price_farm_id = getValueFromSelect("fair_price_farm_id");
+
 }
 
 function createObject() {
@@ -110,17 +123,31 @@ function createObject() {
     "Symptom": ArrSymptom,
     "Health Issue": ArrHealthProb,
     "Location": area_region + ", " + area_dist,
-    "Visited in Last 7 days": visited_area_last_7_day,
-    "Known Infected Person": infected_name_id,
-    "Known Infected Person Contact": infected_mobile_id,
-    "Get Touched Infected Person": touch_with_infected_name_id,
-    "Get Touched Infected Person Contact": touch_with_infected_mobile_id,
-    "Met Persons": met_person_name_id,
-    "Met Persons Contact": met_person_mobile_id,
-    "Is Health Worker": isHealthWorker,
-    "Volunteer Org Name": volunteer_org_name_id,
-    "Security Org Name": security_person_org_name_id,
-    "Salary Status": getting_salary_id
+    "Travel History": {
+      "Visited in Last 7 days": visited_area_last_7_day,
+      "Living With Infected Person": infected_name_id,
+      "Living With Infected Person Contact": infected_mobile_id,
+      "Get Touched Infected Person": touch_with_infected_name_id,
+      "Get Touched Infected Person Contact": touch_with_infected_mobile_id,
+      "Met Persons": met_person_name_id,
+      "Met Persons Contact": met_person_mobile_id
+    },
+    "Working History": {
+      "Is Health Worker": isHealthWorker,
+      "Volunteer Org Name": volunteer_org_name_id,
+      "Security Org Name": security_person_org_name_id
+    },
+    "Income Info": {
+      "Getting Salary": getting_salary_id,
+      "Wage Grade": wage_grade_id,
+      "Can Effort Food for": food_supply_id,
+      "Chances of losing job": losing_job_id,
+      "Producing": producing_farm_id,
+      "Amount of Production": amount_of_production_id,
+      "Getting Help for Farm": get_help_farm_id,
+      "Supply in market": supply_farm_intime_id,
+      "Getting Fair price": fair_price_farm_id
+    }
   }
 }
 
