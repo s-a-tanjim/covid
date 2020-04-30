@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Covid 19</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">কোভিড ১৯</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="index.html">হোম <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="screening_tools.html">কোভিড ১৯ টেস্ট</a>
+        <a class="nav-item nav-link" href="#">লগ-ইন</a>
+        <a class="nav-item nav-link" href="#">সাইন আপ</a>
+        <a class="nav-item nav-link" href="#">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .container-top-bar {
+      text-align: center;
+      background-color: rgba(17, 17, 17, 0.692);
+    }
+
+    .radio {
+      background-color: rgb(255, 255, 255);
+      padding: 20px 20px;
+    }
+
+    .btn-primary {
+      margin-top: 50px;
+    }
+
+    .radio input {
+      margin-right: 10px;
+    }
+
+    .form-control {
+      max-width: 350px;
+    }
+  </style>
+
+  <div class="container" style="margin-top: 100px;">
+    <div class="row" style="justify-content: center;">
+      <div class="col-md-12	col-lg-12	col-xl-12 container-top-bar">
+        <img src="PersonWithThermometer.png" style="height: 90px;">
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="text-align: center;" id="tab-1">
+        <h2 style="margin-top: 50px;">কোভিড ১৯ টেস্টিং টুল</h2>
+
+        <p>স্বাগতম। এই টুলটির সাহায্যে আপনি কোভিড-১৯ বা নভেল করোনা ভাইরাস দ্বারা আক্রান্ত কি’না, তা নিজেই মূল্যায়ন করতে
+          পারবেন। এমনকি আপনার ঝুঁকির মাত্রা ও করনীয় সম্পর্কেও জানতে পারবেন। এই সফটওয়্যারটি বিশ্ব স্বাস্থ্য সংস্থা এর
+          গাইডলাইন মেনে তৈরি করা হয়েছে। তবে কোন অবস্থাতেই এই সফটওয়ার থেকে প্রাপ্ত ফলাফলকে অভিজ্ঞ ডাক্তার কর্তৃক
+          স্বাস্থ্য পরামর্শ হিসেবে বিবেচনা করা যাবে না। সফটওয়ারে আপনার শেয়ার করা তথ্যের গোপনীয়তা বজায় রাখা হবে।
+        </p>
+        <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+            data-target="#loginModal">লগ-ইন</button>
+        </p>
+        <p><button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+            data-target="#signupModal">সাইন-আপ</button>
+        </p>
+
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="text-align: center;display: none;" id="tab-2">
+        <h2 style="margin-top: 50px;">কোভিড ১৯ টেস্টিং টুল</h2>
+
+        <p>স্বাগতম। এই টুলটির সাহায্যে আপনি কোভিড-১৯ বা নভেল করোনা ভাইরাস দ্বারা আক্রান্ত কি’না, তা নিজেই মূল্যায়ন করতে
+          পারবেন। এমনকি আপনার ঝুঁকির মাত্রা ও করনীয় সম্পর্কেও জানতে পারবেন। এই সফটওয়্যারটি বিশ্ব স্বাস্থ্য সংস্থা এর
+          গাইডলাইন মেনে তৈরি করা হয়েছে। তবে কোন অবস্থাতেই এই সফটওয়ার থেকে প্রাপ্ত ফলাফলকে অভিজ্ঞ ডাক্তার কর্তৃক
+          স্বাস্থ্য পরামর্শ হিসেবে বিবেচনা করা যাবে না। সফটওয়ারে আপনার শেয়ার করা তথ্যের গোপনীয়তা বজায় রাখা হবে।
+        </p>
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('3')">নিজের জন্য টেস্ট করুন</button>
+        </p>
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('10')">অন্যের জন্য টেস্ট
+            করুন</button>
+        </p>
+
+      </div>
+
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-3">
+        <h2 style="margin-top: 50px;">এটা কি জরুরি?</h2>
+        <p style="margin-bottom: 50px;">থামুন এবং নিচে উল্লেখিত লক্ষণ সমূহ প্রকাশ পেলে জরুরী ভিত্তিতে যোগাযোগ করুনঃ
+          10655,+8801944333222,+8801937000011<br>
+        </p>
+        <ul>
+          <li>তীব্র বুকে ব্যাথা অথবা চাপ</li>
+          <li>শুস্ক কাশি এবং শ্বাস নিতে চরম অসুবিধা</li>
+          <li>তীব্র এবং প্রতিনিয়ত হালকা মাথা ব্যাথা</li>
+        </ul>
+        <p style="margin-bottom: 50px;"> উপরে উল্লেখিত লক্ষণ সমূহ প্রকাশ পেলে
+          <button type="button" class="btn btn-primary btn-lg" onclick="changeTab('6')">এখানে চাপুন</button></p>
+        <div class="radio">
+          <label><input type="radio" name="optradio1">আমার এর একটিও নেই <label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="optradio1">আমার অন্তত একটি লক্ষণ প্রকাশ পেয়েছে</label>
+        </div>
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('4')">পরবর্তি</button></p>
+
+      </div>
+
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-4">
+        <h2 style="margin-top: 50px;">আপনার কি নিচে উল্লেখিত কোনো লক্ষণ প্রকাশ পেয়ছে?</h2>
+
+        <div class="radio">
+          <label><input type="radio" id="symptom_1" name="optradio31" value="Symptom1">জ্বর, ঠান্ডা লাগা বা ঘাম
+            হওয়া</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_2" name="optradio32" value="Symptom2">শ্বাস নিতে অসুবিধা (তীব্র
+            নয়)</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_3" name="optradio33" value="Symptom3">নতুন বা ক্রমবর্ধমান কাশি</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_4" name="optradio34" value="Symptom4">গলা ব্যথা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_5" name="optradio35" value="Symptom5">সারা শরীরে ব্যাথা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_6" name="optradio36" value="Symptom6">বমি অথবা ডায়েরিয়া</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="symptom_00" name="optradio" value="Symptom00">কোনোটই নয়</label>
+        </div>
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('5')">পরবর্তি</button></p>
+
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-5">
+        <h2 style="margin-top: 50px;">আপনার কি নিচে উল্লেখিত কোনো শারীরিক সমস্যা রয়েছে?</h2>
+
+        <div class="radio">
+          <label><input type="radio" id="health_prob_1" name="optradio41" value="HealthProblem1">হাঁপানি বা দীর্ঘস্থায়ী
+            ফুসফুসের রোগ</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_2" name="optradio42" value="HealthProblem2">গর্ভাবস্থা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_3" name="optradio43" value="HealthProblem3">ডায়াবেটিস
+            জটিলতা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_4" name="optradio44" value="HealthProblem4">কোনো রোগের কারনে
+            কাশিজনিত সমস্যা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_5" name="optradio45" value="HealthProblem5">কিডনি বিকলের জন্য
+            ডায়ালাইসিস প্রয়োজন
+          </label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_6" name="optradio46" value="HealthProblem6">যকৃতের প্রদাহ</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_7" name="optradio47" value="HealthProblem7">দূর্বল রোগ প্রতিরোধ
+            ব্যবস্থা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_8" name="optradio48" value="HealthProblem8">অতিরিক্ত
+            স্থুলতা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_9" name="optradio49" value="HealthProblem9">হৃদযন্ত্র জনিত জটিল
+            সমস্যা</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" id="health_prob_00" name="optradio" value="HealthProblem00">কোনোটই নয়</label>
+        </div>
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('6')">পরবর্তি</button></p>
+
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-6">
+        <h2 style="margin-top: 50px;">আপনার অঞ্চল</h2>
+
+
+        <div class="form-group">
+          <label for="area_dist">অঞ্চল (একটী বাছাই করুন):</label>
+          <select class="form-control" id="area_dist" style="max-width: 160px;">
+            <option value="Dhaka">ঢাকা</option>
+            <option value="Chittagong">চট্টগ্রাম</option>
+            <option value="Rajshahi">রাজশাহী</option>
+            <option value="Sylhet">সিলেট</option>
+            <option value="Rangpur">রংপুর</option>
+            <option value="Barishal">বরিশাল</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="area_region">এরিয়া(একটি বাছুন):</label>
+          <select class="form-control" id="area_region" style="max-width: 160px;">
+            <option value="Uttara">উত্তরা</option>
+            <option value="Dhanmondi">ধানমন্ডি</option>
+            <option value="Bonani">বনানী</option>
+            <option value="Mirpur DOHS">মিরপুর ডিওএইচএস</option>
+            <option value="Mirpur 10">মিরপুর-১০</option>
+            <option value="Badda">বাড্ডা</option>
+          </select>
+        </div>
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('7')">পরবর্তি</button></p>
+
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-7">
+        <h2 style="margin-top: 50px;">আপনার ভ্রমন ইতিহাস</h2>
+
+        <div class="form-group">
+          <label for="sel2">ভ্রমন তথ্যাদি:(বিগত ১৪ দিনে যেখানে যেখানে ভ্রমন করেছেন)</label><br>
+          <div class="radio">
+            <label><input type="radio" name="Visited_last_7_days" onclick="visited_last_7_day()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="Visited_last_7_days" onclick="not_visited_last_7_day()">না</label>
+          </div>
+          <div id="visited_place_last_7_days" style="display: none;">
+            <label for="visited_area_last_7_day">স্থান সমুহ:</label>
+            <input type="text" name="travel_area" class="form-control" id="visited_area_last_7_day" aria-describedby=""
+              placeholder="স্থান সমুহ লিখুন...">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">আপনি কি কোনো আক্রান্ত ব্যক্তির সাথে বসবাস করেন?</label><br>
+          <div class="radio">
+            <label><input type="radio" name="live_with_infected" onclick="live_with_infected()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="live_with_infected" onclick="not_live_with_infected()">না</label>
+          </div>
+          <div id="live_infected_person" style="display: none;">
+            <label for="infected_name_id">নাম:</label>
+            <input type="text" name="travel_area" class="form-control" id="infected_name_id" aria-describedby=""
+              placeholder="নাম লিখুন...">
+            <label for="infected_mobile_id">মোবাইল নং:</label>
+            <input type="text" name="travel_area" class="form-control" id="infected_mobile_id" aria-describedby=""
+              placeholder="মোবাইল নং লিখুন...">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">আপনি কি কোনো আক্রান্ত ব্যক্তির সংস্পর্শে এসেছেন?</label><br>
+          <div class="radio">
+            <label><input type="radio" name="touch_with_infected" onclick="touch_with_infected()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="touch_with_infected" onclick="not_touch_with_infected()">না</label>
+          </div>
+          <div id="touch_infected_person" style="display: none;">
+            <label for="touch_with_infected_name_id">নাম:</label>
+            <input type="text" name="travel_area" class="form-control" id="touch_with_infected_name_id"
+              aria-describedby="" placeholder="নাম লিখুন...">
+            <label for="touch_with_infected_mobile_id">মোবাইল নং:</label>
+            <input type="text" name="travel_area" class="form-control" id="touch_with_infected_mobile_id"
+              aria-describedby="" placeholder="মোবাইল নং লিখুন...">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">গত কয়েকদিনে কেউ কি আপনার সংস্পর্শে এসেছিল?</label><br>
+          <div class="radio">
+            <label><input type="radio" name="met_anyone" onclick="met_anyone()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="met_anyone" onclick="not_met_anyone()">না</label>
+          </div>
+          <div id="met_person" style="display: none;">
+            <label for="met_person_name_id">নাম:</label>
+            <input type="text" name="travel_area" class="form-control" id="met_person_name_id" aria-describedby=""
+              placeholder="নাম লিখুন...">
+            <label for="met_person_mobile_id">মোবাইল নং:</label>
+            <input type="text" name="travel_area" class="form-control" id="met_person_mobile_id" aria-describedby=""
+              placeholder="মোবাইল নং লিখুন...">
+          </div>
+        </div>
+
+
+
+        <!--<div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">বিগত ১৪ দিনে আপনার সংস্পর্শে যারা এসেছে তাদের নাম এবং ফোন নম্বর লিখুনঃ </label><br>
+          <label for="travel_area">নাম:</label>
+          <input type="text" name="travel_area" class="form-control" id="conatact_n1" aria-describedby=""
+            placeholder="নাম লিখুন...">
+          <label for="travel_area">মোবাইল নং:</label>
+          <input type="text" name="travel_area" class="form-control" id="conatact_n1" aria-describedby=""
+            placeholder="মোবাইল নং লিখুন...">
+        </div>
+
+        <div class="form-group">
+          <label for="sel2">আপনি কি সাম্প্রতিক কোনো করোনা রোগীর সংস্পর্শে এসেছিলেন? </label><br>
+          <label><input type="radio" name="optradio49">হ্যা</label>
+          <label><input type="radio" name="optradio49">না</label>
+        </div>
+
+        <div class="form-group">
+          <label for="sel2">আপনি কি সাম্প্রতিক কোনো করোনা আক্রান্ত এলাকায় ভ্রমন করেছিলেন? </label><br>
+          <label><input type="radio" name="optradio49">হ্যা</label>
+          <label><input type="radio" name="optradio49">না</label>
+        </div>-->
+
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('8')">পরবর্তি</button></p>
+
+      </div>
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-8">
+        <h2 style="margin-top: 50px;">আপনার সাম্প্রতিক কাজের ইতিহাসঃ</h2>
+
+        <div class="form-group">
+          <label for="sel2">আপনি কি কোনো স্বাস্থ্য কর্মী?</label><br>
+          <div class="radio">
+            <label><input type="radio" name="health_worker_name" id="health_worker_yes_id"
+                value="health_worker_yes">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="health_worker_name" id="health_worker_no_id"
+                value="health_worker_no">না</label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">আপনি কি কোনো স্বেচ্ছাসেবক হিসেবে কাজ করছেন?</label><br>
+          <div class="radio">
+            <label><input type="radio" name="work_as_volunteer" onclick="work_as_volunteer()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="work_as_volunteer" onclick="not_work_as_volunteer()">না</label>
+          </div>
+          <div id="volunteer_details" style="display: none;">
+            <label for="volunteer_org_name_id">বিস্তারিতঃ</label>
+            <input type="text" name="travel_area" id="volunteer_org_name_id" class="form-control" aria-describedby=""
+              placeholder="সংস্থার নাম লিখুন...">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 35px;">
+          <label for="sel2">আপনি কি কোনো নিরাপত্তা কর্মী?(</label><br>
+          <div class="radio">
+            <label><input type="radio" name="security_person" onclick="security_person()">হ্যা</label>
+          </div>
+          <div class="radio" style="padding-top: 0px;">
+            <label><input type="radio" name="security_person" onclick="not_security_person()">না</label>
+          </div>
+          <div id="security_person_details" style="display: none;">
+            <label for="security_person_org_name_id">সংস্থার নামঃ:</label>
+            <input type="text" name="travel_area" class="form-control" id="security_person_org_name_id"
+              aria-describedby="" placeholder="সংস্থার নাম এখানে লিখুন...">
+          </div>
+        </div>
+
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('9')">পরবর্তি</button></p>
+
+      </div>
+
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-9">
+        <h2 style="margin-top: 50px;">আপনি কি আপনার বেতন পাচ্ছেন?</h2>
+        <div class="form-group">
+          <select class="form-control" id="getting_salary_id" style="max-width: 160px;">
+            <option value="Yes">হ্যা</option>
+            <option value="No">না</option>
+            <option value="Partial">আংশিক</option>
+          </select>
+        </div>
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="submitToFirebase()">পরবর্তি</button></p>
+      </div>
+
+      <!-- for other person-->
+
+      <!--  <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-10">
+        <div>
+          <h5 style="margin-top: 50px;">আপনার জাতীয় পরিচয়পত্র নংঃ </h5>
+
+          <div class="form-group">
+            <input type="text" name="nid_no" class="form-control" id="nid_no" aria-describedby="nid_no_small"
+              placeholder="এন.আই.ডি. নং লিখুন...">
+            <h5 style="margin-top: 50px;">আপনার মোবাইল নংঃ </h5>
+            <input type="text" name="nid_no" class="form-control" id="nid_no" aria-describedby="nid_no_small"
+              placeholder="মোবাইল নং লিখুন...">
+            <small id="nid_no_small" class="form-text text-muted">আপনার তথ্য কোনো ব্যক্তি বা প্রতিষ্ঠানের নিকট প্রকাশ
+              করে হবে না</small>
+          </div>
+
+          <h2 style="margin-top: 50px;">আপনার বয়স কত? </h2>
+
+          <h2 style="margin-top: 50px;">আপনার পেশা</h2>
+
+          <div class="form-group">
+            <input type="text" name="occupation" class="form-control" id="occupation" aria-describedby=""
+              placeholder="পেশা এখানে লিখুন...">
+          </div>
+
+          <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('11')">পরবর্তি</button></p>
+        </div>
+      </div>-->
+
+
+      <div class="col-md-9	col-lg-9	col-xl-9" style="display: none;" id="tab-10">
+        <h2 style="margin-top: 50px;margin-bottom: 50px;">যাকে পরীক্ষা করতে চান তার তথ্য দিন</h2>
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group">
+              <input type="text" placeholder="নাম" class="form-control form-control-login" name="name"
+                id="other_name_id" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group">
+              <input type="text" placeholder="এন.আই.ডি. /জন্ম নিদন্ধন/পার্সপোর্ট নং"
+                class="form-control form-control-login" id="other_nid_id" name="nid" required>
+              <div class="valid-feedback">Valid.</div>
+              <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="জন্ম তারিখ" class="form-control form-control-login" name="dob"
+            id="other_dob_id" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+        </div>
+
+
+        <div class="form-group">
+          <input type="tel" class="form-control form-control-login" placeholder="মোবাইল নং" name="mobile_no"
+            id="other_mobile_id" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control form-control-login" placeholder="ব্লাড গ্রুপ" name="blood_group"
+            id="other_blood_id" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control form-control-login" placeholder="পেশা" name="occupation"
+            id="other_occupation_id" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control form-control-login" placeholder="পরিবারের সদস্য সংখ্যা"
+            id="other_number_of_family_id" name="family_member" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+        </div>
+
+        <p><button type="button" class="btn btn-primary btn-lg" onclick="changeTab('3')">পরবর্তি</button></p>
+
+      </div>
+
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">লগ-ইন করুনঃ</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 1.5rem 2.5rem;">
+            <form action="#" class="needs-validation" novalidate method="POST">
+              <div class="form-group">
+                <input type="text" class="form-control form-control-login" id="signin_nid_id" name="username" required>
+                <label for="username-login" id="label-for-email">আপনার এন.আই.ডি. নং/জন্ম নিবন্ধন নং/পার্সপোর্ট নংঃ
+                </label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+              <div class="form-group" style="margin-top: 25px;">
+                <input type="date" class="form-control form-control-login" id="signin_dob_id" name="password" required>
+                <label for="pwd-login" id="label-for-password">জন্ম তারিখ</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+              <div class="form-group-submit" style="text-align: center;">
+                <button id="login-btn" type="submit" class="btn btn-primary" style="margin-top: 10px;" name="submit"
+                  onclick="changeTab('2')">লগ-ইন</button>
+                <!--<button type="button" class="btn btn-outline-dark">Login</button>-->
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer" style="display: block;padding: .75rem 2rem;">
+            <div style="float: right;cursor: pointer;" data-dismiss="modal" data-toggle="modal"
+              data-target="#signupModal">
+              নতুন একাউন্ট তৈরী করুন
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Modal End-->
+
+    <style>
+      #alreadyExistAlert,
+      #passwordDidntMatch {
+        font-size: 80%;
+        color: #ba2937;
+        display: none;
+      }
+
+      .form-control-login {
+        max-width: 100%;
+      }
+    </style>
+    <!-- SignUp Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">নতুন একটি একাউন্ট তৈরী করুন</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="padding: 1.5rem 2.5rem;justify-content: center;">
+
+            <form action="#">
+
+              <div class="row">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="নাম" class="form-control form-control-login" id="signup_name_id"
+                      name="name" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="এন.আই.ডি. /জন্ম নিদন্ধন/পার্সপোর্ট নং"
+                      class="form-control form-control-login" id="signup_nid_id" name="signup_nid_id" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" placeholder="জন্ম তারিখ" class="form-control form-control-login" id="signup_dob_id"
+                  name="dob" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+
+
+              <div class="form-group">
+                <input type="tel" class="form-control form-control-login" placeholder="মোবাইল নং" id="signup_mobile_id"
+                  required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-login" placeholder="ব্লাড গ্রুপ"
+                  id="signup_blood_group_id" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control form-control-login" placeholder="পেশা" id="signup_occupation_id"
+                  required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control form-control-login" placeholder="পরিবারের সদস্য সংখ্যা"
+                  id="signup_family_member_id" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">দয়া করে এটি পূরণ করুন</div>
+              </div>
+
+              <div class="form-group-submit" style="text-align: center;">
+                <button id="signup-btn" name="submit" class="btn btn-primary" style="margin-top: 10px;"
+                  onclick="changeTab('2')">সাইন-আপ</button>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer" style="padding: .75rem 2rem;">
+            <span style="cursor: pointer;" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">
+              ইতিপূর্বে একটি একাউন্ট রয়েছে?
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SignUp Modal End -->
+
+    <!-- Button trigger modal -->
+    <button type="button" id="success-modal-btn" style="display: none;" data-toggle="modal" data-target="#SuccessModal">
+      
+    </button>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="SuccessModal" tabindex="-1" role="dialog" aria-labelledby="SuccessModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom:0px;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="color: #155724;font-size: 2em;text-align: center;margin-bottom: 20px;">
+            Successfully Submitted
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" id="failed-modal-btn" style="display: none;" data-toggle="modal" data-target="#FailedModal">
+    </button>
+
+    <!-- Failed Modal -->
+    <div class="modal fade" id="FailedModal" tabindex="-1" role="dialog" aria-labelledby="FailedModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="border-bottom:0px;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="color: #721c24;font-size: 2em;text-align: center;margin-bottom: 20px;">
+            Submission Failed!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Form validation JS
+      // Disable form submissions if there are invalid fields
+      (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+          // Get the forms we want to add validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      //Form Validation Script End
+    </script>
+
+
+    <script>
+      var number_of_tab = 11;
+
+      function hideAll() {
+        for (var i = 1; i < number_of_tab; i++) {
+          var x = 'tab-' + i;
+          document.getElementById(x).style.display = 'none';
+        }
+
+      }
+
+      document.getElementById("signup-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+        $('#signupModal').modal('hide');
+      });
+      document.getElementById("login-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+        $('#loginModal').modal('hide');
+      });
+
+      function changeTab(val) {
+        hideAll();
+        var id = 'tab-' + val;
+        if (val == 'end')
+          window.location.href = "index.html";
+        else
+          document.getElementById(id).style.display = 'block';
+      }
+
+      function visited_last_7_day() {
+        document.getElementById('visited_place_last_7_days').style.display = 'block';
+      }
+
+      function not_visited_last_7_day() {
+        document.getElementById('visited_place_last_7_days').style.display = 'none';
+      }
+
+      //changeTab('7');
+    </script>
+    <script>
+      function live_with_infected() {
+        document.getElementById('live_infected_person').style.display = 'block';
+      }
+
+      function not_live_with_infected() {
+        document.getElementById('live_infected_person').style.display = 'none';
+      }
+
+      function touch_with_infected() {
+        document.getElementById('touch_infected_person').style.display = 'block';
+      }
+
+      function not_touch_with_infected() {
+        document.getElementById('touch_infected_person').style.display = 'none';
+      }
+
+      function met_anyone() {
+        document.getElementById('met_person').style.display = 'block';
+      }
+
+      function not_met_anyone() {
+        document.getElementById('met_person').style.display = 'none';
+      }
+    </script>
+    <script>
+      function work_as_volunteer() {
+        document.getElementById('volunteer_details').style.display = 'block';
+      }
+
+      function not_work_as_volunteer() {
+        document.getElementById('volunteer_details').style.display = 'none';
+      }
+
+      function security_person() {
+        document.getElementById('security_person_details').style.display = 'block';
+      }
+
+      function not_security_person() {
+        document.getElementById('security_person_details').style.display = 'none';
+      }
+    </script>
+
+
+    <footer style="margin-top: 100px;">
+
+      <div
+        style="background-color: rgba(17, 17, 17, 0.808);color: antiquewhite;width: 100%;height: 60px;text-align: center;font-size: 1.2em;padding-top: 1%;">
+        All right reserved 2020
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDwMkT_j5sKXpxJ92D6QMDn_gLPrqsnmXY",
+        authDomain: "covid-111.firebaseapp.com",
+        databaseURL: "https://covid-111.firebaseio.com",
+        projectId: "covid-111",
+        storageBucket: "covid-111.appspot.com",
+        messagingSenderId: "202284645825",
+        appId: "1:202284645825:web:331653455b8dca1b9a4340",
+        measurementId: "G-36YFXZXS98"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="firebase.js"></script>
+</body>
+
+</html>
